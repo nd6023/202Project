@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=Gumball
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Gumball\ here.\r\n\ \r\n\ @Kalyani\r\n\ @1.0\r\n
+comment1.params=
+comment1.target=Gumball()
+comment2.params=
+comment2.target=void\ act()
+comment3.params=
+comment3.target=Message\ setGbImage()
+comment4.params=lottery
+comment4.target=Message\ giveball(int)
+numComments=5
