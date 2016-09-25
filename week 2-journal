@@ -1,0 +1,12 @@
+	 Praneetha reddy Devireddy
+
+Week 2:
+ This week we decided to do individual research on probable methods of reaching our goal individually. This week I did my research on different sorts available and their complexities. Sorts available are divided into four categories they are 
+1.	Simple sorts which consists of insertion and selection sorts.
+2.	Efficient sorts which consists of heap, quick and merge sorts.
+3.	Bubble sort and its variants i.e., shell and comb sort.
+4.	Distribution sort which consists of counting, bucket and radix sort.
+Our final aim is to make player understand the different sorts available, their procedure and complexities thus helping them to gain a complete knowledge on sorting algorithms since they play a major role in any problem solving. Coming week, we will meet with our ideas and finalize the sorts which we will be using in our game and the best way to implement them which will make it easier for everyone to understand.
+ Since my Xp value is simplicity I am going to help my team choose the simple way to reach our goal i.e., to make people understand sorting easily. Simplicity comes with checking on coding part and also implementation part on which one would be better and easily understandable for player.
+This week I also did programming in blue J and Junit which helped me in understand unit testing which will help me in future to test our project with different test cases. I also committed to GitHub about various sorting algorithms available with their procedures which will be helpful while deciding on using which one of those in our project. 
+The next step in our project would be to consolidate our individual ideas on implementation part and then we would start our design procedure of our game. We are still doing research on user interface and programming language to be used. After this week we will have a clear idea on what our project is going to be.
