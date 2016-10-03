@@ -11,9 +11,14 @@ public class Tracker {
 		this.level = level;
 		this.remark = remark;
 	}
+	public Tracker(String score) {
+		super();
+		this.score = score;
+		this.level = null;
+		this.remark = null;
+	}
 	public Tracker() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 	public String getScore() {
 		return score;
