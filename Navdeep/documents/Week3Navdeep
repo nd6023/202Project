@@ -1,0 +1,16 @@
+
+Navdeep Dahiya
+010813010
+
+My XP value is courage. This week, we had detailed discussion for dividing the project into different modules and allocated individual resources responsible for it. I analyzed meticulously the division of modules and pointed out the short comings that we were had in it. Our project includes a system for teaching five sort algorithms to the users, and jeopardy game for validating their knowledge. Further decisions will be taken as per the user’s performance.
+
+Accordingly, team revised the division and allocation of modules and resources. I will be working on programming RESTful APIs to incorporate multiplayer gaming and hosting our application on cloud. I am also responsible for implementing the multiplayer logic for our project
+
+With the help of RESTful API, the track of progress pf multi-players will be maintained and accordingly further decisions will be taken depending on our functional logic
+I will be programming the RESTful APIs in Java. The technologies that will be used in it will be following:
+1.	Java 8
+2.	Java Maven
+3.	Tomcat 8
+4.	REST API jax-rs
+
+I have created a base structure for my module. I am exploring different algorithms for implementing the requirement. I am programming the REST API with the fundamental requirements and will further incorporate the new requirements as we encounter them during the build phase. 
