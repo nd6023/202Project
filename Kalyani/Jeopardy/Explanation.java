@@ -1,19 +1,49 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import java.awt.Font;
 
 /**
- * Write a description of class Game here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Kalyani 
+ * @version 1.0
  */
 public class Explanation extends Actor
 {
+    private String[] text;
+
     /**
-     * Act - do whatever the Game wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * Create a new explanation, and wrap
+     * it nicely.
      */
-    public void act() 
-    {
-        // Add your action code here.
-    }    
+    public Explanation(String text) {
+        this.text = QuizWorld.wordWrap(text);
+    }
+    
+    /**
+     * When the object is added to the world, draw it.
+     */
+    public void addedToWorld(World world) {
+        draw();
+    }
+    
+    /**
+     * Draw on screen.
+     */
+    private void draw() {
+        GreenfootImage image = new GreenfootImage(500, 200);
+        image.setFont(new Font("SansSerif", Font.BOLD, 16));
+
+        for(int i=0 ; i<text.length ; i++) {
+            image.drawString(text[i], 10, 20+(i*20));
+        }
+        
+        setImage(image);
+    }
+    
+    /**
+     * If space is pressed, advance to the next question.
+     */
+    public void act() {
+        if(Greenfoot.isKeyDown("space")) {
+            ((QuizWorld)getWorld()).nextQuestion();
+        }
+    }
 }
