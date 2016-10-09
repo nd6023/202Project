@@ -33,4 +33,9 @@ public class QuestionPool extends Game
     public ArrayList getQuestions(){
         return questions;
     }
+    
+    public ArrayList getAnswers(){
+        return answers;
+    }
+    
 }
