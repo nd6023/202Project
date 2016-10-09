@@ -5,8 +5,8 @@ import java.awt.Color;
 /**
  * An answer - several of these are displayed per question.
  * 
- * @author Kalyani
- * @version 1.0
+ * @Kalyani
+ * @version 1.0 10/9/2016
  */
 public class Answer extends Actor
 {

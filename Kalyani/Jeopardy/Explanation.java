@@ -2,8 +2,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.awt.Font;
 
 /**
- * @author Kalyani 
- * @version 1.0
+ * @Kalyani
+ * @version 1.0 10/9/2016
  */
 public class Explanation extends Actor
 {

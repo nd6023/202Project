@@ -3,8 +3,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class Player1 here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @Kalyani
+ * @version 1.0 10/9/2016
  */
 public class Text extends Actor
 {
