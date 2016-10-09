@@ -15,9 +15,14 @@ public class QuestionPool extends Game
      */
     
     private ArrayList questions = new ArrayList();
+    private ArrayList answers = new ArrayList();
+    
     
     public QuestionPool(){
-        
+        questions.add("What does this sequence matches to?");
+        answers.add("Merge Sort");
+        answers.add("Insertion Sort");
+        answers.add("Bubble Sort");
     }
     
     public void act() 
