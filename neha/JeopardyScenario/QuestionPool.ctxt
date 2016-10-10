@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=QuestionPool
+comment0.text=\n\ Write\ a\ description\ of\ class\ QuestionPool\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=
+comment1.target=QuestionPool()
+comment2.params=
+comment2.target=void\ act()
+comment3.params=
+comment3.target=java.util.ArrayList\ getQuestions()
+comment4.params=
+comment4.target=java.util.ArrayList\ getAnswers()
+numComments=5
