@@ -32,7 +32,7 @@ import com.mongodb.MongoClient;
 import edu.sjsu.location.pojo.Incident;
 import edu.sjsu.location.pojo.Location;
 import edu.sjsu.location.pojo.LocationList;
-import edu.sjsu.location.pojo.Street;
+import edu.sjsu.location.pojo.user_data;
 
 
 @Path("/rest")
@@ -54,7 +54,7 @@ public class RestCRUDService {
 				mongoClient = new MongoClient("localhost", 27017);
 			
 			@SuppressWarnings("deprecation")
-			DB db = mongoClient.getDB("rateStreet");
+			DB db = mongoClient.getDB("highScores");
 			// gets collection user..similar to table
 			DBCollection table = db.getCollection("incident");
 			
@@ -69,7 +69,7 @@ public class RestCRUDService {
 			document.put("date", incident.getDate());
 			document.put("time", incident.getTime());
 			document.put("type", incident.getType());
-			document.put("streetName", incident.getStreetName());
+			document.put("userName", incident.getStreetName());
 			
 			table.insert(document);
 
@@ -97,7 +97,7 @@ public class RestCRUDService {
 	@POST
 	@Path("/postrating")
 	@Consumes(MediaType.APPLICATION_JSON)
-		public Response registerRating(Street street ) {
+		public Response registerRating(user_data user_data ) {
 			
 			String result = "";
 			
@@ -107,14 +107,14 @@ public class RestCRUDService {
 				mongoClient = new MongoClient("localhost", 27017);
 			
 			@SuppressWarnings("deprecation")
-			DB db = mongoClient.getDB("rateStreet");
+			DB db = mongoClient.getDB("highScores");
 			// gets collection user..similar to table
-			DBCollection table = db.getCollection("street");
+			DBCollection table = db.getCollection("user_data");
 			
 			
 			
 			BasicDBObject searchQuery = new BasicDBObject();
-			searchQuery.put("streetName", street.getStreetName());
+			searchQuery.put("userName", user_data.getStreetName());
 			DBCursor cursor = table.find(searchQuery);
 			String strTime = "";
 			while (cursor.hasNext()) {
@@ -123,7 +123,7 @@ public class RestCRUDService {
 				result += details + "\n";
 
 				// ++ ND
-				strTime = (String) nextDocument.get("streetName");
+				strTime = (String) nextDocument.get("userName");
 				// -- ND
 
 			}
@@ -131,15 +131,15 @@ public class RestCRUDService {
 			{
 				//System.out.println("The record is not yet inserted at \t\t" + strTime );
 				BasicDBObject document = new BasicDBObject();
-				document.put("streetName", street.getStreetName());
-				document.put("rating", street.getRating());
+				document.put("userName", user_data.getStreetName());
+				document.put("rating", user_data.getRating());
 				
 				table.insert(document);
 				//System.out.println("Person will be going ====>"+clientID);
 
 				// searching the DB to get the document for the given client
 				BasicDBObject searchQueryP = new BasicDBObject();
-				searchQueryP.put("streetName", street.getStreetName());
+				searchQueryP.put("userName", user_data.getStreetName());
 				DBCursor cursorP = table.find(searchQueryP);
 				result = "";
 				while (cursorP.hasNext()) {
@@ -153,15 +153,15 @@ public class RestCRUDService {
 			else { 
 				//System.out.println("The record was inserted at \t\t" + strTime );
 				BasicDBObject updatedClient = new BasicDBObject();
-				updatedClient.put("streetName", street.getStreetName());
-				updatedClient.put("rating", street.getRating());
-				BasicDBObject updateQuery = new BasicDBObject().append("streetName", street.getStreetName());
+				updatedClient.put("userName", user_data.getStreetName());
+				updatedClient.put("rating", user_data.getRating());
+				BasicDBObject updateQuery = new BasicDBObject().append("userName", user_data.getStreetName());
 
 				table.update(updateQuery, updatedClient);
 
 				// searching the DB to retrieve the updated details of the client
 				BasicDBObject searchQueryPut = new BasicDBObject();
-				searchQueryPut.put("streetName", street.getStreetName());
+				searchQueryPut.put("userName", user_data.getStreetName());
 				DBCursor cursorPut = table.find(searchQueryPut);
 				result = "";
 				while (cursorPut.hasNext()) {
@@ -417,9 +417,9 @@ public class RestCRUDService {
 	// ND -- get put
 
 	@GET
-	@Path("/get/{streetName}")
+	@Path("/get/{userName}")
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response read(@PathParam("streetName") String streetName) {
+	public Response read(@PathParam("userName") String userName) {
 		String result = "";
 
 		// Creating serverside mongoDB which is listening on port 27017
@@ -428,13 +428,13 @@ public class RestCRUDService {
 			mongoClient = new MongoClient("localhost", 27017);
 
 			@SuppressWarnings("deprecation")
-			DB db = mongoClient.getDB("rateStreet");
+			DB db = mongoClient.getDB("highScores");
 			// gets collection user..similar to table
 			DBCollection table = db.getCollection("incident");
 
 			// searching the DB to retrieve the updated details of the client
 			BasicDBObject searchQuery = new BasicDBObject();
-			searchQuery.put("streetName", streetName);
+			searchQuery.put("userName", userName);
 			DBCursor cursor = table.find(searchQuery);
 			//String strTime = "";
 			while (cursor.hasNext()) {
@@ -466,7 +466,7 @@ public class RestCRUDService {
 			mongoClient = new MongoClient("localhost", 27017);
 
 			@SuppressWarnings("deprecation")
-			DB db = mongoClient.getDB("rateStreet");
+			DB db = mongoClient.getDB("highScores");
 			// gets collection user..similar to table
 			DBCollection table = db.getCollection("incident");
 
@@ -509,9 +509,9 @@ public class RestCRUDService {
 			mongoClient = new MongoClient("localhost", 27017);
 
 			@SuppressWarnings("deprecation")
-			DB db = mongoClient.getDB("rateStreet");
+			DB db = mongoClient.getDB("highScores");
 			// gets collection user..similar to table
-			DBCollection table = db.getCollection("street");
+			DBCollection table = db.getCollection("user_data");
 
 			// searching the DB to retrieve the updated details of the client
 			BasicDBObject searchQuery = new BasicDBObject();
@@ -537,9 +537,9 @@ public class RestCRUDService {
 	//
 	
 	@GET
-	@Path("/getstreet/{streetName}")
+	@Path("/getstreet/{userName}")
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response readStreet(@PathParam("streetName") String streetName) {
+	public Response readStreet(@PathParam("userName") String userName) {
 		String result = "";
 
 		// Creating serverside mongoDB which is listening on port 27017
@@ -548,13 +548,13 @@ public class RestCRUDService {
 			mongoClient = new MongoClient("localhost", 27017);
 
 			@SuppressWarnings("deprecation")
-			DB db = mongoClient.getDB("rateStreet");
+			DB db = mongoClient.getDB("highScores");
 			// gets collection user..similar to table
-			DBCollection table = db.getCollection("street");
+			DBCollection table = db.getCollection("user_data");
 
 			// searching the DB to retrieve the updated details of the client
 			BasicDBObject searchQuery = new BasicDBObject();
-			searchQuery.put("streetName", streetName);
+			searchQuery.put("userName", userName);
 			DBCursor cursor = table.find(searchQuery);
 			//String strTime = "";
 			while (cursor.hasNext()) {
@@ -586,9 +586,9 @@ public class RestCRUDService {
 			mongoClient = new MongoClient("localhost", 27017);
 
 			@SuppressWarnings("deprecation")
-			DB db = mongoClient.getDB("rateStreet");
+			DB db = mongoClient.getDB("highScores");
 			// gets collection user..similar to table
-			DBCollection table = db.getCollection("street");
+			DBCollection table = db.getCollection("user_data");
 
 			// searching the DB to retrieve the updated details of the client
 			BasicDBObject searchQuery = new BasicDBObject();
@@ -808,9 +808,9 @@ public class RestCRUDService {
 	// Nearby JSON --
 			
 	@DELETE
-	@Path("/delete/{streetName}")
+	@Path("/delete/{userName}")
 	@Consumes(MediaType.APPLICATION_JSON)
-	public Response deRegister(@PathParam("streetName") String streetName) {
+	public Response deRegister(@PathParam("userName") String userName) {
 
 		String result = "";
 
@@ -820,10 +820,10 @@ public class RestCRUDService {
 			mongoClient = new MongoClient("localhost", 27017);
 
 			@SuppressWarnings("deprecation")
-			DB db = mongoClient.getDB("rateStreet");
+			DB db = mongoClient.getDB("highScores");
 			// gets collection user..similar to table
 			DBCollection table = db.getCollection("incident");
-			BasicDBObject deleteQuery = new BasicDBObject().append("streetName", streetName);
+			BasicDBObject deleteQuery = new BasicDBObject().append("userName", userName);
 
 			table.remove(deleteQuery);
 
@@ -838,9 +838,9 @@ public class RestCRUDService {
 	
 	
 	@DELETE
-	@Path("/deletestreet/{streetName}")
+	@Path("/deletestreet/{userName}")
 	@Consumes(MediaType.APPLICATION_JSON)
-	public Response deRegisterStreet(@PathParam("streetName") String streetName) {
+	public Response deRegisterStreet(@PathParam("userName") String userName) {
 
 		String result = "";
 
@@ -850,10 +850,10 @@ public class RestCRUDService {
 			mongoClient = new MongoClient("localhost", 27017);
 
 			@SuppressWarnings("deprecation")
-			DB db = mongoClient.getDB("rateStreet");
+			DB db = mongoClient.getDB("highScores");
 			// gets collection user..similar to table
-			DBCollection table = db.getCollection("street");
-			BasicDBObject deleteQuery = new BasicDBObject().append("streetName", streetName);
+			DBCollection table = db.getCollection("user_data");
+			BasicDBObject deleteQuery = new BasicDBObject().append("userName", userName);
 
 			table.remove(deleteQuery);
 
@@ -866,50 +866,8 @@ public class RestCRUDService {
 		return Response.status(201).entity(result).build();
 	}
 
-	// ND + Distance calculator
-	/*
-	public static boolean isSafe(Location currentLoc, Map<String, Location> locMap) {
-		double safeDistance=6;
-		boolean status=true;
+	
 
-
-		for(String iterLocation: locMap.keySet()){
-
-			if(!iterLocation.equals(currentLoc.getRegistrationID())){
-				double dis = distance(currentLoc.getLatitude(), currentLoc.getLongitude(),locMap.get(iterLocation).getLatitude() , locMap.get(iterLocation).getLatitude());
-				System.out.println(dis);
-				if(dis>safeDistance && dis > 1){
-					status = true;
-				}
-				else {
-					status = false;
-					return status;
-				}
-			}
-
-
-		}
-
-		return status;
-
-
-	}*/
-
-	public boolean isNear(double lat1, double lon1, double lat2, double lon2) {
-		if((distance(lat1, lon1, lat2, lon2))<10) {
-			return true;
-		}
-		return false;
-	}
-
-	private static double distance(double lat1, double lon1, double lat2, double lon2) {
-		double theta = lon1 - lon2;
-		double dist = Math.sin(deg2rad(lat1)) * Math.sin(deg2rad(lat2)) + Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) * Math.cos(deg2rad(theta));
-		dist = Math.acos(dist);
-		dist = rad2deg(dist);
-		dist = dist * 60 * 1.1515;
-		return (dist);
-	}
 
 	/*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
 	/*::	This function converts decimal degrees to radians						 :*/
@@ -925,6 +883,6 @@ public class RestCRUDService {
 		return (rad * 180 / Math.PI);
 	}
 
-	// ND -- Distance
+	
 }
 
