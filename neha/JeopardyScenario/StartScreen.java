@@ -50,7 +50,7 @@ public class StartScreen extends KinectWorld
     public void prepare()
     {
         // Set the World's Background
-        setBackground("welcomeBackground.jpg");
+        setBackground("welcomeBackground.png");
     }
     
     /**
