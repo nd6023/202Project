@@ -151,28 +151,7 @@ public class UserData
         return imgY;
     }
     
-    /**
-     * Gets the joint associated with a given index.  This is identical to getAllJoints()[index].  Valid
-     * values to pass in are:
-     * 
-     * Joint.HEAD
-     * Joint.NECK
-     * Joint.TORSO
-     * Joint.LEFT_SHOULDER
-     * Joint.LEFT_ELBOW
-     * Joint.LEFT_HAND
-     * Joint.RIGHT_SHOULDER
-     * Joint.RIGHT_ELBOW
-     * Joint.RIGHT_HAND
-     * Joint.LEFT_HIP
-     * Joint.LEFT_KNEE
-     * Joint.LEFT_FOOT
-     * Joint.RIGHT_HIP
-     * Joint.RIGHT_KNEE
-     * Joint.RIGHT_FOOT
-     * 
-     * Joint data is only valid if isTracking() currently returns true.
-     */
+   
     public Joint getJoint(int index)
     {
         return joints[index];
