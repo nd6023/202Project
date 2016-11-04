@@ -270,4 +270,9 @@ public class UserData
         if (scale == 1.0f) return this;
         else return new UserData(this, scale);
     }
+    
+    public Map getUserScores(){
+    	userMap = getScoreService();
+    }
+    }
 }
