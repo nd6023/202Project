@@ -27,7 +27,10 @@ public class StartScreen extends KinectWorld
         }
         
     
-        if (Greenfoot.isKeyDown ("up")) myComponents.translateOut();
+        if (Greenfoot.isKeyDown ("up")) 
+        	
+        	myComponents.translateOut();
+        
         if (Greenfoot.isKeyDown ("down")) 
         {
             // show team info
@@ -72,6 +75,8 @@ public class StartScreen extends KinectWorld
     public void kinectController()
     {
         UserData user = this.getTrackedUser();
+        
+        Score HighScore = user.getHighScores();
         // Starting the game when the user swipes up the right hand above their head
         if (user.getHighestJoint() == Joint.RIGHT_HAND) myComponents.translateOut();
         
