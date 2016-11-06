@@ -8,18 +8,20 @@ import java.awt.Font;
  * @version (a version number or a date)
  */
 public class Obj1 extends Numberobjects
-{ int number=Greenfoot.getRandomNumber(100);
+{ 
+    int number;
     /**
      * Act - do whatever the Obj1 wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    public Obj1()
+    public Obj1(int number)
     { 
+        this.number=number;
         GreenfootImage img1=new GreenfootImage(30,30);
         img1.setFont(new java.awt.Font("Forte", Font.PLAIN, 25));
         img1.drawString(Integer.toString(number),2,20);
         setImage(img1);
-       
+ 
     }
     
     public void act() 
