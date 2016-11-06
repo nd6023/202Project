@@ -1,24 +1,27 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.awt.Font;
+
 /**
- * Write a description of class Obj11 here.
+ * Write a description of class Obj1 here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
 public class Obj11 extends Numberobjects
-{ int number=Greenfoot.getRandomNumber(100);
+{ 
+    int number;
     /**
      * Act - do whatever the Obj1 wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    public Obj11()
+    public Obj11(int number)
     { 
+        this.number=number;
         GreenfootImage img1=new GreenfootImage(30,30);
         img1.setFont(new java.awt.Font("Forte", Font.PLAIN, 25));
         img1.drawString(Integer.toString(number),2,20);
         setImage(img1);
-       
+ 
     }
     
     public void act() 
@@ -28,5 +31,5 @@ public class Obj11 extends Numberobjects
     public int getNumber()
     {
         return number;
-    } 
+    }
 }

@@ -24,17 +24,18 @@ public class BubblesortWorld extends World
         addObject(new Emptyarray(),370,156);
         addObject(new Stepbutton(),207,306);
         addObject(new Resetbutton(),476,306);
-        addObject(new Obj1(),120,156);
-        addObject(new Obj2(),170,156);
-        addObject(new Obj3(),220,156);
-        addObject(new Obj4(),270,156);
-        addObject(new Obj5(),320,156);
-        addObject(new Obj6(),370,156);
-        addObject(new Obj7(),420,156);
-        addObject(new Obj8(),470,156);
-        addObject(new Obj9(),520,156);
-        addObject(new Obj10(),570,156);
-        addObject(new Obj11(),620,156);
+        addObject(new Ipointer(),120,95);
+        addObject(new Obj1(46),120,156);
+        addObject(new Obj2(35),170,156);
+        addObject(new Obj3(67),220,156);
+        addObject(new Obj4(24),270,156);
+        addObject(new Obj5(36),320,156);
+        addObject(new Obj6(97),370,156);
+        addObject(new Obj7(7),420,156);
+        addObject(new Obj8(56),470,156);
+        addObject(new Obj9(72),520,156);
+        addObject(new Obj10(14),570,156);
+        addObject(new Obj11(27),620,156);
     }
     
    

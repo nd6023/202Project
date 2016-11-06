@@ -9,6 +9,8 @@ public interface IFirstComponent
     
     void drawComponent();
     
+    void chooseOperation();
+    
     void translateOut();
     
     int getSize();

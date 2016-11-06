@@ -8,6 +8,7 @@ public class UserData
     private int id; // set by the Kinect software, arbitrary and gets re-used
     private int state; // current state, 0 is not tracking, 1 is calibrating, 2 is tracking
     private int previousState; // state before last data frame from the server.
+    private Map<String, String> userMap; 
     private final Joint[] joints = new Joint[Joint.NUM_JOINTS]; // Joint data, only valid when tracking
     private GreenfootImage img; // Scaled image, present in any state, can be arbitrary size
     private int imgX, imgY; // Scaled offset into overall scaled 640*480 image.
@@ -18,6 +19,7 @@ public class UserData
         this.state = ud.state;
         this.previousState = ud.state;
         this.img = new GreenfootImage(ud.img);
+        this.userMap = new HashMap<String,String>();
         this.img.scale((int)(scale * this.img.getWidth()), (int)(scale * this.img.getHeight()));
         this.imgX = (int)(ud.imgX * scale);
         this.imgY = (int)(ud.imgY * scale);
@@ -29,6 +31,8 @@ public class UserData
     
     /**
      * For internal use only.
+     * Is should be a singleton as this might otherwise violate the 
+     * consitency of the data we have 
      */
     public UserData(int id)
     {
@@ -151,28 +155,7 @@ public class UserData
         return imgY;
     }
     
-    /**
-     * Gets the joint associated with a given index.  This is identical to getAllJoints()[index].  Valid
-     * values to pass in are:
-     * 
-     * Joint.HEAD
-     * Joint.NECK
-     * Joint.TORSO
-     * Joint.LEFT_SHOULDER
-     * Joint.LEFT_ELBOW
-     * Joint.LEFT_HAND
-     * Joint.RIGHT_SHOULDER
-     * Joint.RIGHT_ELBOW
-     * Joint.RIGHT_HAND
-     * Joint.LEFT_HIP
-     * Joint.LEFT_KNEE
-     * Joint.LEFT_FOOT
-     * Joint.RIGHT_HIP
-     * Joint.RIGHT_KNEE
-     * Joint.RIGHT_FOOT
-     * 
-     * Joint data is only valid if isTracking() currently returns true.
-     */
+   
     public Joint getJoint(int index)
     {
         return joints[index];
@@ -286,5 +269,10 @@ public class UserData
     {
         if (scale == 1.0f) return this;
         else return new UserData(this, scale);
+    }
+    
+    public Map getUserScores(){
+    	userMap = getScoreService();
+    }
     }
 }
