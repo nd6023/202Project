@@ -71,3 +71,33 @@ public class CountDownTimer extends Actor {
         if (timer != null) timer.cancel();
         getImage().clear();
     }
+    
+    private class Task extends TimerTask {
+        /**
+         * Displays the count-down digits.
+         */
+        public void run() {
+            GreenfootImage img = getImage();
+            img.clear();
+            if (count <= 0) {
+                stop();
+                ((GameManager) getWorld()).timeout();
+            } else {
+                Graphics g = getImage().getAwtImage().getGraphics();
+                g.setFont(font);
+                FontMetrics fm = g.getFontMetrics();
+                img.setColor(Color.WHITE);
+                img.fill();
+                img.setColor(Color.BLACK);
+                img.setFont(font);
+                String text = "" + count;
+                int x = img.getWidth() / 2 - fm.stringWidth(text) / 2;
+                int y = img.getHeight() / 2 + (int) (fm.getAscent()
+                    * ASCENT_MULT) / 2;
+                img.drawString(text, x, y);
+            }
+            setImage(img);
+            count--;
+        }
+    }
+}
