@@ -1,19 +1,46 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import java.awt.*;
 
 /**
- * Write a description of class Response here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * A response displayed after each question.
+ *
+ * @author Kalyani
+ * @version 1.0 
  */
-public class Response extends Actor
-{
+public class Response extends Actor implements ActionListener {
+    private static final int LINE_LENGTH = 60;
+    private static GreenfootImage img;
+    private Question question;
+    private Type type;
+    private Button right;
+    private Button wrong;
+    private GameManager world;
+    /** The type of the response. */
+    public enum Type { RIGHT, WRONG, SELF }
+
     /**
-     * Act - do whatever the Response wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * Create a new response with required information.
+     *
+     * @param q The Question for this response.
+     * @param t The type of this response.
      */
-    public void act() 
-    {
-        // Add your action code here.
-    }    
-}
+    public Response(Question q, Type t) {
+        setQuestion(question);
+        setType(t);
+        right = new Button("Right", 1);
+        right.setFont(GameManager.SMALL_FONT);
+        right.addActionListener(this);
+        wrong = new Button("Wrong", 0);
+        wrong.setFont(GameManager.SMALL_FONT);
+        wrong.addActionListener(this);
+    }
+
+    /**
+     * Check for the end of the response.
+     */
+    public void act() {
+        if (type != Type.SELF && (Greenfoot.isKeyDown("space")
+            || Greenfoot.mouseClicked(this))) {
+            world.endQuestion();
+        }
+    }
