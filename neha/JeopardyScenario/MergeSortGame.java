@@ -14,13 +14,17 @@ public class MergeSortGame extends Game
      */
 	List<Integer> numList;
 	
-	public MergeSortGame(List )
+	public MergeSortGame(List numList){
+		this.numList = numList;
+	}
 	
     public void act() 
     {
         
     }   
-    
+    /**
+     * Algorithm to sort the list goes here 
+     */
     public next getNext(){
     	
     	
