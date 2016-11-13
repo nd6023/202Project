@@ -12,7 +12,7 @@ public class HelloWorldResource extends ServerResource {
 
     @Get
     public String represent() {
-        return "hello, world";
+        return "The gammer current score is : ";
     }
 
 }

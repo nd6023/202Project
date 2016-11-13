@@ -13,7 +13,7 @@ public class HelloWorldClient {
 	// Cloud 9 - REST Service: http://cloud-paulnguyen.c9users.io:8080/restlet/hello
 	// Local   - REST Service: http://localhost:8080/restlet/hello
 
-    	private static String service_url = "http://localhost:8080/restlet/hello" ;
+    	private static String service_url = "http://localhost:8080/restlet/score" ;
 
     	public static void main(String[] args) throws Exception {
         	ClientResource helloClientresource = new ClientResource( service_url ); 
