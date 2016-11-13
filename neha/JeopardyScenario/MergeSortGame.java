@@ -12,8 +12,21 @@ public class MergeSortGame extends Game
      * Act - do whatever the MergeSortGame wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+	List<Integer> numList;
+	
+	public MergeSortGame(List numList){
+		this.numList = numList;
+	}
+	
     public void act() 
     {
-        // Add your action code here.
-    }    
+        
+    }   
+    /**
+     * Algorithm to sort the list goes here 
+     */
+    public next getNext(){
+    	
+    	
+    }
 }
