@@ -12,6 +12,7 @@ public class Game extends Actor
     
     QuestionPool questionPool = new QuestionPool();
     AnswerPool answerPool = new AnswerPool(); 
+    boolean forever = true;
     
     /**
      * Act - do whatever the Game wants to do. This method is called whenever
@@ -28,6 +29,14 @@ public class Game extends Actor
     public void act() 
     {
         // Add your action code here.
+        while(forever){
+            
+            String getUserInput = readOption();
+            boolean checkTrue = checkCorrectStep(getUserInput);
+        
+        
+        }
+        
     }    
     
     public void runGame(){
@@ -37,5 +46,9 @@ public class Game extends Actor
         
         //Random sequence shows the game here.
         
+    }
+    
+    public boolean checkCorrectStep(String userInput){
+        return false;
     }
 }
