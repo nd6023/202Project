@@ -19,7 +19,7 @@ public class HelloWorldServer extends Application {
         Router router = new Router(getContext());
 
         // Defines only one route
-        router.attach("/hello", HelloWorldResource.class);
+        router.attach("/score", HelloWorldResource.class);
 
         return router;
     }

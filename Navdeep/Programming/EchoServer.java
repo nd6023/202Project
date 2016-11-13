@@ -64,10 +64,10 @@ public class EchoServer extends Application {
      * Constructor.
      */
     public EchoServer() {
-        setName("RESTful Echo Server");
-        setDescription("Example from Restlet in Action");
-        setOwner("Restlet S.A.S.");
-        setAuthor("The Restlet Team");
+        setName("RESTful API Server");
+        setDescription("Gaming REST API");
+        setOwner("Restlet Gamer");
+        setAuthor("Navdeep Dahiya");
     }
 
     /**
