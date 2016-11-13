@@ -16,7 +16,7 @@ public class Emptyarray extends Actor
     {
         
         GreenfootImage image = getImage() ;
-        image.scale( 600, 100 ) ; 
+        image.scale( 300, 100 ) ; 
     }
     
     public void act() 

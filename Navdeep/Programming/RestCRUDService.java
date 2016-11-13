@@ -56,7 +56,7 @@ public class RestCRUDService {
 			@SuppressWarnings("deprecation")
 			DB db = mongoClient.getDB("highScores");
 			// gets collection user..similar to table
-			DBCollection table = db.getCollection("incident");
+			DBCollection table = db.getCollection("userScores");
 			
 			
 			
@@ -64,18 +64,18 @@ public class RestCRUDService {
 			// post call
 			BasicDBObject document = new BasicDBObject();
 			document.put("id", incident.getId());
-			document.put("latitude", incident.getLatitude());
-			document.put("longitude", incident.getLongitude());
+			document.put("score", incident.getLatitude());
+			document.put("level", incident.getLongitude());
 			document.put("date", incident.getDate());
 			document.put("time", incident.getTime());
-			document.put("type", incident.getType());
+			//document.put("type", incident.getType());
 			document.put("userName", incident.getStreetName());
 			
 			table.insert(document);
 
 			
 			
-			// searching the DB to get the document for the given client
+			// Searches the DB for user's score
 			BasicDBObject searchQuery = new BasicDBObject();
 			searchQuery.put("id", incident.getLatitude());
 			DBCursor cursor = table.find(searchQuery);
