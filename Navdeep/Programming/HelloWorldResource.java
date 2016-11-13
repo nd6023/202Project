@@ -14,5 +14,19 @@ public class HelloWorldResource extends ServerResource {
     public String represent() {
         return "The gammer current score is : ";
     }
+    
+    @Post
+    public String represent() {
+        return "Posting the details of the gamer.";
+    }
 
+    @Put
+    public String represent() {
+        return "Updating the details of the gamer.";
+    }
+    
+    @Delete
+    public String represent() {
+        return "Deleting the details of the gamer.";
+    }
 }
