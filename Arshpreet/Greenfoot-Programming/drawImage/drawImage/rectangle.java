@@ -19,7 +19,7 @@ public class rectangle extends Actor
      */
     public void act() 
     {
-        slow++;
+       // slow++;
         setLocation(40,50);// Add your action code here.
     }    
 }
