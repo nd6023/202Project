@@ -29,7 +29,7 @@ public class MyWorld extends World
         addObject(new num8(),470,156);
         addObject(new num9(),520,156);
         addObject(new num10(),570,156);
-        addObject(new rectangle(),120,120);
+        //addObject(new rectangle(),120,120);
         
        
     }
