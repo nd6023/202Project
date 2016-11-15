@@ -14,13 +14,13 @@ public class Message extends Actor
      */
     public Message()
     {
-        gi=new GreenfootImage(100,50);
+        gi=new GreenfootImage(250,30);
         setImage(gi);
     }
     public void setText(String msg)
     {
         gi.clear();
-        gi.setColor(java.awt.Color.YELLOW);
+        gi.setColor(java.awt.Color.WHITE);
         gi.fill();
         gi.setColor(java.awt.Color.BLACK);
         gi.drawString(msg,0,25);

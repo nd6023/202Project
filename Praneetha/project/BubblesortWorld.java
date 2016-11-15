@@ -20,15 +20,11 @@ public class BubblesortWorld extends World
         prepare();
     }
     public void prepare()
-    {
+    {  String s="46     35     67     24";
         addObject(new Emptyarray(),348,156);
         addObject(new Stepbutton(),80,150);
         addObject(new Resetbutton(),80,250);
-        addObject(new Ipointer(),270,95);
-        addObject(new Obj1(46),270,156);
-        addObject(new Obj2(35),320,156);
-        addObject(new Obj3(67),370,156);
-        addObject(new Obj4(24),420,156);
+        addObject(new Label(s),370,156);
       
     }
     
