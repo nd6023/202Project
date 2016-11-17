@@ -22,7 +22,7 @@ public class BubblesortWorld extends World
     public void prepare()
     {  String s="46     35     67     24";
         addObject(new Emptyarray(),348,156);
-        addObject(new Stepbutton(),80,150);
+        addObject(new BubbleSortStepbutton(),80,150);
         addObject(new Resetbutton(),80,250);
         addObject(new Label(s),370,156);
       
