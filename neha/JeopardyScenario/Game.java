@@ -13,6 +13,9 @@ public class Game extends Actor
     QuestionPool questionPool = new QuestionPool();
     AnswerPool answerPool = new AnswerPool(); 
     boolean forever = true;
+    String[] gameSequence = new String[6];
+    
+    
     
     /**
      * Act - do whatever the Game wants to do. This method is called whenever
@@ -22,6 +25,10 @@ public class Game extends Actor
     pubilc Game(){
     	questionPool = populateQuestionPool();
     	answerPool = populateAnswerPool();
+    	for(int i=0; i<gameSequence.length; i++){
+    	    //Giving it a random sequence for now.
+    	    gameSequence[i] = i+1;
+    	}
     }
     
     ArrayList resultList = new ArrayList();
