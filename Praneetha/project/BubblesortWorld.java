@@ -16,15 +16,15 @@ public class BubblesortWorld extends World
     public BubblesortWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(800, 600, 1); 
+        super(800, 1500, 1); 
         prepare();
     }
     public void prepare()
-    {  String s="46     35     67     24";
+    {  String s="46    35    67    24";
         addObject(new Emptyarray(),348,156);
         addObject(new BubbleSortStepbutton(),80,150);
         addObject(new Resetbutton(),80,250);
-        addObject(new Label(s),370,156);
+        addObject(new Label(s,25),370,156);
       
     }
     
