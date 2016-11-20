@@ -1,7 +1,22 @@
 #BlueJ class context
 comment0.target=Response
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Response\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
-comment1.params=
-comment1.target=void\ act()
-comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ Response\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
-numComments=2
+comment0.text=\r\n\ A\ response\ displayed\ after\ each\ question.\r\n\r\n\ @author\ Kalyani\r\n\ @version\ 1.0\ \r\n
+comment1.params=q\ t
+comment1.target=Response(Question,\ Response.Type)
+comment2.params=
+comment2.target=void\ act()
+comment3.params=newQuestion
+comment3.target=void\ setQuestion(Question)
+comment4.params=t
+comment4.target=void\ setType(Response.Type)
+comment5.params=c
+comment5.target=void\ actionPerformed(GUIComponent)
+comment6.params=
+comment6.target=void\ clear()
+comment7.params=w
+comment7.target=void\ addedToWorld(greenfoot.World)
+comment8.params=
+comment8.target=void\ draw()
+comment9.params=line\ y\ font
+comment9.target=int\ printCentered(java.lang.String,\ int,\ java.awt.Font)
+numComments=10

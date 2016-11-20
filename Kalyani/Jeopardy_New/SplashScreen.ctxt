@@ -1,7 +1,19 @@
 #BlueJ class context
 comment0.target=SplashScreen
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ SplashScreen\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ Displays\ flashing\ screens.\r\n\r\n\ @author\ Kalyani\r\n\ @version\ 1.0\ \ \r\n
 comment1.params=
-comment1.target=void\ act()
-comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ SplashScreen\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
-numComments=2
+comment1.target=SplashScreen()
+comment1.text=\r\n\ SplashScreen\ constructor.\r\n
+comment2.params=
+comment2.target=void\ act()
+comment2.text=\r\n\ Trigger\ the\ flashes.\r\n
+comment3.params=w
+comment3.target=void\ addedToWorld(greenfoot.World)
+comment3.text=\r\n\ Save\ the\ world\ and\ draw\ it.\r\n\r\n\ @param\ w\ the\ world.\r\n
+comment4.params=
+comment4.target=void\ clear()
+comment4.text=\r\n\ Clears\ the\ display\ area\ and\ removes\ this\ object\ from\ the\ world.\r\n
+comment5.params=
+comment5.target=void\ draw()
+comment5.text=\r\n\ Draw\ the\ screen\ objects.\r\n
+numComments=6
