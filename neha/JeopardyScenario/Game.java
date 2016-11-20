@@ -15,7 +15,7 @@ public class Game extends Actor
     boolean forever = true;
     String[] gameSequence = new String[6];
     
-    
+    int highScore ;
     
     /**
      * Act - do whatever the Game wants to do. This method is called whenever
@@ -52,7 +52,7 @@ public class Game extends Actor
         }
         else {
             
-            for(int i=0; i<inputSeq.length()){
+            for(int i=0; i<inputSeq.length();i++){
                 if(inputSeq[i]== gameSequence[i])
                 continue;
                 else {
@@ -66,6 +66,8 @@ public class Game extends Actor
     public void runGame(){
         questionPool.getQuestions();
         answerPool.getAnswers();
+        IScoreService ss = new ScoreServiceImpl();
+        highScore = ss.getHighScore();
         //Now start the game here.
         
         //Random sequence shows the game here.
