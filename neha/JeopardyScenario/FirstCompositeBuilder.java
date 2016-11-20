@@ -11,6 +11,9 @@ public class FirstCompositeBuilder
         order.addChild(new FirstImage("firstLogo.png", 400, 200, world));
         order.addChild(new FirstImage("firstPaddle.png", 400, 560, world));
         order.chooseOperation(Operation.INSERTION_SORT);
+        order.chooseOperation(Operation.MERGE_SORT);
+        //order.chooseOperation(Operation.SELECT_SORT);
+        //order.chooseOperation(Operation.BUBBLE_SORT);
         order.addChild(new FirstImage("firstBall.png", 400, 535, world));
         order.addChild(new FirstImage("firstSwipeUp.png", 400, 435, world));
         
