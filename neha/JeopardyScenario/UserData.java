@@ -274,5 +274,5 @@ public class UserData
     public Map getUserScores(){
     	userMap = getScoreService();
     }
-    }
+    
 }

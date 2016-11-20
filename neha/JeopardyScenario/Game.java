@@ -46,6 +46,23 @@ public class Game extends Actor
         
     }    
     
+    public void runGame(String[] inputSeq){
+        if(inputSeq.length() ! = gameSequence){
+            return;
+        }
+        else {
+            
+            for(int i=0; i<inputSeq.length()){
+                if(inputSeq[i]== gameSequence[i])
+                continue;
+                else {
+                    //Its not sorted yet, arrange again!
+                }
+            }
+            
+        }
+    }
+    
     public void runGame(){
         questionPool.getQuestions();
         answerPool.getAnswers();
