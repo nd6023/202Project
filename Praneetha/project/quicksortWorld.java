@@ -14,19 +14,26 @@ public class quicksortWorld extends World
      * 
      */
     public quicksortWorld()
-    {    
+    {  
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(800, 2000, 1); 
+        super(800, 600, 1); 
         prepare();
     }
     public void prepare()
     {
-       String s="46     92     65     24      10     77      33      9";
-        addObject(new Emptyarray2(),450,156);
-        addObject(new QuickSortStepbutton(),80,250);
-        addObject(new QuickSortResetbutton(),80,350);
-        addObject(new Label(s,25,500,200),440,60); 
-        addObject(new Ipointer(),210,105);
-        addObject(new Jpointer(),670,105);
+        addObject(new Emptyarray2(),454,156);
+        addObject(new QuickSortStepbutton(),80,150);
+        addObject(new QuickSortResetbutton(),80,250);
+        addObject(new Ipointer(),270,115);
+        addObject(new Jpointer(),650,115);
+        addObject(new Obj(46),270,156);
+        addObject(new Obj(92),320,156);
+        addObject(new Obj(65),370,156);
+        addObject(new Obj(24),420,156);
+        addObject(new Obj(10),470,156);
+        addObject(new Obj(77),520,156);
+        addObject(new Obj(33),570,156);
+        addObject(new Obj(9),620,156);
     }
+    
 }

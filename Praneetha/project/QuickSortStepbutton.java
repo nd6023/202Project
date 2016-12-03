@@ -1,5 +1,6 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-import java.util.Arrays;
+import java.util.List;
+
 /**
  * Write a description of class QuickSortStepbutton here.
  * 
@@ -7,111 +8,90 @@ import java.util.Arrays;
  * @version (a version number or a date)
  */
 public class QuickSortStepbutton extends Button
-{  int y3=96,y2,y4,y5=186;
-    int x=250,x1,x2=600,x3;
+{ 
      int[] values={46,92,65,24,10,77,33,9};
-    int i=0;
-    int j=values.length-1;
+    int low=0; boolean done=false;
+    int high=values.length-1;
+     int pivot=values[0];
+   List<Obj> array;
+   
     public void act() 
-    {    if(Greenfoot.mouseClicked(this))
-       { 
-           quicksort(getValues(),getI(),getJ()); }
-       
-    } 
-      public void quicksort(int[] values,int lowerIndex,int higherIndex)
-    {  i = lowerIndex;
-        j = higherIndex;
-      int pivot = values[lowerIndex+(higherIndex-lowerIndex)/2];
-        
-        while (i <= j) {
-            /**
-             * In each iteration, we will identify a number from left side which
-             * is greater then the pivot value, and also we will identify a number
-             * from right side which is less then the pivot value. Once the search
-             * is done, then we exchange both numbers.
-             */
-            while (values[i] < pivot) {
-                setI(i);
-            }
-            while (values[j] > pivot) {
-                setJ(j);
-            }
-            if (i <= j) {
-                 System.out.println(Arrays.toString(values));
-                exchangeNumbers(i, j);
-                String s=values[0]+"      "+values[1]+"     "+values[2]+"     "+values[3]+"      "+values[4]+"     "+values[5]+"     "+values[6]+"      "+values[7];
-                y2=y3+85;
-                  y4=y5+85;
-                getWorld().addObject(new Emptyarray2(),450,y4);
-                y3=y2;
-                y5=y4;
-                String names=" pivot: "+pivot+" i: "+i+" j: "+j +" values at i and j are swapped";
-                getWorld().addObject(new Label(names,20,500,200),500,y2-45);
-                getWorld().addObject(new Label(s,25,500,200),450,y2);
-                setI(i);
-                setJ(j);
-          
-            }
-           
+    {   array=getWorld().getObjects(Obj.class);
+        if(Greenfoot.mouseClicked(this)&&!done)
+       {  List<Label> l= getWorld().getObjects(Label.class);
+           getWorld().removeObjects(l);
+           done=quicksort();
         }
-        // call quickSort() method recursively
-        if (lowerIndex < j)
-          { System.out.println(Arrays.toString(values));
-               String s=values[0]+"      "+values[1]+"     "+values[2]+"     "+values[3]+"      "+values[4]+"     "+values[5]+"     "+values[6]+"      "+values[7];
-                y2=y3+85; y4=y5+85;
-                getWorld().addObject(new Emptyarray2(),450,y4);
-                y3=y2;  y5=y4;
-               String names=" pivot: "+pivot+" i: "+i+" j: "+j;
-                getWorld().addObject(new Label(names,20,500,200),500,y2-45);
-                getWorld().addObject(new Label(s,25,500,200),450,y2);
-              quicksort(values,lowerIndex, getJ());
-               
-            }   
-        if (i < higherIndex)
-         {   System.out.println(Arrays.toString(values));
-              String s=values[0]+"      "+values[1]+"     "+values[2]+"     "+values[3]+"      "+values[4]+"     "+values[5]+"     "+values[6]+"      "+values[7];
-                y2=y3+85; y4=y5+85;
-                getWorld().addObject(new Emptyarray2(),450,y4);
-                y3=y2;  y5=y4;
-               String names=" pivot: "+pivot+" i: "+i+" j: "+j;
-               getWorld().addObject(new Label(names,20,500,200),500,y2-45);
-                getWorld().addObject(new Label(s,25,500,200),450,y2);
-             quicksort(values,getI(), higherIndex); 
+        if(Greenfoot.mouseClicked(this)&&done)
+       {    String s=" Pivot element is placed ";
+           getWorld().addObject(new Label(s),450,450);
+        }
+    } 
+      public boolean quicksort()
+    {   
+        
+        if(high>low)
+        {
+            if(low<=high&&values[low]<=pivot)
+           {   low++;
+                Ipointer ipoint=(Ipointer)getWorld().getObjects(Ipointer.class).get(0);
+                ipoint.changePosition(55); 
+              return false;
             }
-    }
-     private void exchangeNumbers(int i, int j) {
+         if(low<=high&&values[high]>pivot)
+            {
+             high--;
+            Jpointer jpoint=(Jpointer)getWorld().getObjects(Jpointer.class).get(0);
+            jpoint.changePosition(-55);
+             return false;
+            }
+            if(high>low)
+            { exchangeNumbers(low,high);
+               
+                 swap(low,high);
+                return false;
+            }
+        }  
+           if(high>0&&values[high]>=pivot)
+           {
+               high--;
+           Jpointer jpoint=(Jpointer)getWorld().getObjects(Jpointer.class).get(0);
+            jpoint.changePosition(-55);
+           return false;
+            }
+            if(pivot>values[high])
+            {
+                 //pivot in place;
+                 exchangeNumbers(0,high);
+                 swap(0,high);
+               
+                return true;
+            }
+       return false;
+        }
+    
+       private void exchangeNumbers(int i, int j) {
         int temp = values[i];
         values[i] = values[j];
         values[j] = temp;
+        }
+    
+    
+    public void swap(int i,int j)
+    { String s= array.get(i).getNumber() +" is swapped with "+ array.get(j).getNumber();
+        getWorld().addObject(new Label(s),450,300);
+        Obj ob1=array.get(i);
+        Obj ob2=array.get(j);
+        
+      int move1=ob2.getX()-ob1.getX();
+              
+         ob1.move(move1);
+        ob2.move(-move1);
+         
+         Obj temp=ob1;
+         ob1=ob2;
+         ob2=temp;
+         
     }
-    public int[] getValues()
-{
-    return this.values;
-}
-public void setValues(int[] value)
-{ for(int i=0;i<4;i++)
-    this.values[i]=value[i];
-   
-}
-public void setI(int i)
-{ 
-    this.i=i+1;
-   
-   
-}
-public int getI()
-{    
-      return i;
-  
-}
-public int getJ()
-{      
-    return this.j;
-   
-}
-public void setJ(int j)
-{  
-   this.j=j-1;
-}
 }
   
