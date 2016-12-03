@@ -17,7 +17,7 @@ public class QuickSortResetbutton extends Button
      //   // Add your action code here.
      if(Greenfoot.mousePressed(this))
      {
-        Greenfoot.setWorld(new quicksortWorld());
+        Greenfoot.setWorld(new QuicksortWorld());
     }
     }    
 }

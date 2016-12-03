@@ -17,7 +17,7 @@ public class BubbleSortResetbutton extends Button
      //   // Add your action code here.
      if(Greenfoot.mousePressed(this))
      {
-        Greenfoot.setWorld(new bubblesortWorld());
+        Greenfoot.setWorld(new BubblesortWorld());
     }
     }    
 }

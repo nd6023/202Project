@@ -16,17 +16,17 @@ public class MainWorld extends World
     public MainWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(1000, 1000, 1); 
+        super(800, 600, 1); 
         prepare();
     }
     public void prepare()
     {
-        addObject(new Label("Welcome to Sorting world",40,489,370),475,200);
-        addObject(new bubble(),200,350);
-          addObject(new merge(),650,350);
-            addObject(new quick(),200,475);
-              addObject(new insertion(),650,475);
-                addObject(new selection(),415,600);
+        addObject(new Label("Welcome to Sorting world",40,500,370),425,125);
+        addObject(new bubble(),200,250);
+          addObject(new merge(),650,250);
+            addObject(new quick(),200,375);
+              addObject(new insertion(),650,375);
+                addObject(new selection(),415,500);
     }
     
 }

@@ -6,14 +6,14 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class quicksortWorld extends World
+public class QuicksortWorld extends World
 {
 
     /**
      * Constructor for objects of class quicksortWorld.
      * 
      */
-    public quicksortWorld()
+    public QuicksortWorld()
     {  
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(800, 600, 1); 
@@ -24,6 +24,7 @@ public class quicksortWorld extends World
         addObject(new Emptyarray2(),454,156);
         addObject(new QuickSortStepbutton(),80,150);
         addObject(new QuickSortResetbutton(),80,250);
+        addObject(new Pivot(),270,100);
         addObject(new Ipointer(),270,115);
         addObject(new Jpointer(),650,115);
         addObject(new Obj(46),270,156);

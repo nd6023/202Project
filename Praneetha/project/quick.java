@@ -16,7 +16,7 @@ public class quick extends Button
     {
        if(Greenfoot.mousePressed(this))
      {
-        Greenfoot.setWorld(new quicksortWorld());
+        Greenfoot.setWorld(new QuicksortWorld());
     }
     }    
 }
