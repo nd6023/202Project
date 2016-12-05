@@ -20,7 +20,10 @@ public class MergesortWorld extends World
         prepare();
     }
     public void prepare()
-    {   addObject(new Emptyarray(),350,156);
+    {   
+        
+        addObject(new Label("MERGESORT-ALGORITHM",40,700,500),450,120);
+        addObject(new Emptyarray(),350,156);
         addObject(new Emptyarray(),650,156);
         addObject(new Emptyarray2(),500,300);
         addObject(new MergeSortStepbutton(),80,150);

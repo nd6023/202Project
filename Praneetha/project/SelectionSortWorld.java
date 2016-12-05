@@ -21,7 +21,7 @@ public class SelectionSortWorld extends World
     }
     
     public void prepare()
-    { 
+    {  addObject(new Label("SELECTION SORT-ALGORITHM",40,700,500),450,120);
         addObject(new Emptyarray(),350,156);
         addObject(new SelectionSortStepButton(),80,150);
         addObject(new SelectionSortResetbutton(),80,250);

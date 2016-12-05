@@ -20,11 +20,17 @@ public class QuickSortStepbutton extends Button
         if(Greenfoot.mouseClicked(this)&&!done)
        {  List<Label> l= getWorld().getObjects(Label.class);
            getWorld().removeObjects(l);
+            getWorld().addObject(new Label("QUICK SORT-ALGORITHM",40,700,500),450,120);
            done=quicksort();
         }
         if(Greenfoot.mouseClicked(this)&&done)
-       {    String s=" Pivot element is placed ";
-           getWorld().addObject(new Label(s),450,450);
+       {    String s=" Pivot"+pivot+" element is placed ";
+           getWorld().addObject(new Label(s,20,400,300),450,350);
+            Jpointer jpoint=(Jpointer)getWorld().getObjects(Jpointer.class).get(0);
+             Pivot pivot=(Pivot)getWorld().getObjects(Pivot.class).get(0);
+             pivot.setLocation(jpoint.getX(),100);
+           getWorld().addObject(new Label("now divide the left and right part of pivot element \n and perform quicksort again",20,600,600),450,550);
+           
         }
     } 
       public boolean quicksort()

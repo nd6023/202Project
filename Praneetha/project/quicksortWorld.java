@@ -20,14 +20,14 @@ public class QuicksortWorld extends World
         prepare();
     }
     public void prepare()
-    {
+    {    addObject(new Label("QUICK SORT-ALGORITHM",40,700,500),450,120);
         addObject(new Emptyarray2(),454,156);
         addObject(new QuickSortStepbutton(),80,150);
         addObject(new QuickSortResetbutton(),80,250);
         addObject(new Home(),100,350);
         addObject(new Pivot(),270,100);
-        addObject(new Ipointer(),270,115);
-        addObject(new Jpointer(),650,115);
+        addObject(new Ipointer(),260,115);
+        addObject(new Jpointer(),630,115);
         addObject(new Obj(46),270,156);
         addObject(new Obj(92),320,156);
         addObject(new Obj(65),370,156);

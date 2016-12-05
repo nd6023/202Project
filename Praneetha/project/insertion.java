@@ -14,6 +14,10 @@ public class insertion extends Button
      */
     public void act() 
     {
-        // Add your action code here.
+     //   // Add your action code here.
+     if(Greenfoot.mousePressed(this))
+     {
+        Greenfoot.setWorld(new InsertionsortWorld());
+    }
     }    
 }

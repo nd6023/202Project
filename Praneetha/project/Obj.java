@@ -17,8 +17,8 @@ public class Obj extends NumberObjects
     public Obj(int number)
     { 
         this.number=number;
-        GreenfootImage img1=new GreenfootImage(30,30);
-        img1.setFont(new java.awt.Font("Forte", Font.PLAIN, 25));
+        GreenfootImage img1=new GreenfootImage(33,33);
+        img1.setFont(new java.awt.Font("Comic Sans MS", Font.PLAIN, 25));
         img1.drawString(Integer.toString(number),2,20);
         setImage(img1);
  
