@@ -30,8 +30,7 @@ public class SelectionSortStepButton extends Button
         {
              min=j;
           setJ(j);
-           System.out.println(min+"MINin j"); 
-          return false;     
+           return false;     
         }
         if(values[j]>=values[min])
         {
@@ -41,7 +40,7 @@ public class SelectionSortStepButton extends Button
         }
        }
         if (j==4&&i<3)
-        {   getWorld().addObject(new Label("min:"+min),450,250); System.out.println(i+"i bef swap"); 
+        {   getWorld().addObject(new Label("min:"+min),450,250); 
             exchangeNumbers(min,i);
             swap (min,i);
             setI(i);setJ(j);
@@ -64,7 +63,7 @@ public class SelectionSortStepButton extends Button
     
     
     public void swap(int i,int j)
-    {  System.out.println("array:"+array.get(0).getNumber()+" "+array.get(1).getNumber()+" "+array.get(2).getNumber()+" "+array.get(3).getNumber()+" ");
+    {  
         String s= array.get(i).getNumber() +" is swapped with "+ array.get(j).getNumber();
         getWorld().addObject(new Label(s),450,300);
         Obj ob1=array.get(i);
@@ -76,8 +75,7 @@ public class SelectionSortStepButton extends Button
          ob1=ob2;
          ob2=temp;
          array.set(i,ob1); array.set(j,ob2);
-         System.out.println("array:"+array.get(0).getNumber()+" "+array.get(1).getNumber()+" "+array.get(2).getNumber()+" "+array.get(3).getNumber()+" ");
-    }
+             }
     public int[] getValues()
 {
     return this.values;

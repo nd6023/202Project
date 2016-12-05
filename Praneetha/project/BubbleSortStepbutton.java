@@ -12,18 +12,18 @@ public class BubbleSortStepbutton extends Button
      * Act - do whatever the Stepbutton wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+      boolean done=false,once=true;
  int y3=156;
-     int[] values={46,35,67,24};
+     int[] values={46,92,65,24};
    int i=0;
    int j=1;
-   
+   // List<Obj> array;
     public void act()
     
     {  
-       int clicked=0;
       
         if(Greenfoot.mouseClicked(this))
-        { 
+        { // if(Greenfoot.mouseClicked(this)&&once){ array=getWorld().getObjects(Obj.class); once=false;}
         sort(getValues(),getI(),getJ());
            
          }

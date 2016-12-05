@@ -24,6 +24,7 @@ public class QuicksortWorld extends World
         addObject(new Emptyarray2(),454,156);
         addObject(new QuickSortStepbutton(),80,150);
         addObject(new QuickSortResetbutton(),80,250);
+        addObject(new Home(),100,350);
         addObject(new Pivot(),270,100);
         addObject(new Ipointer(),270,115);
         addObject(new Jpointer(),650,115);

@@ -25,6 +25,7 @@ public class MergesortWorld extends World
         addObject(new Emptyarray2(),500,300);
         addObject(new MergeSortStepbutton(),80,150);
         addObject(new MergeSortResetbutton(),80,250);
+         addObject(new Home(),100,350);
         addObject(new Ipointer(),270,115);
         addObject(new Jpointer(),570,115);
         addObject(new Obj(2),270,156);
