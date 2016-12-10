@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class MergesortWorld extends World
+public class MergesortWorld extends World implements WorldResetStrategy
 {
 
     /**
@@ -22,23 +22,26 @@ public class MergesortWorld extends World
     public void prepare()
     {   
         
-        addObject(new Label("MERGESORT-ALGORITHM",40,700,500),450,120);
-        addObject(new Emptyarray(),350,156);
-        addObject(new Emptyarray(),650,156);
-        addObject(new Emptyarray2(),500,300);
-        addObject(new MergeSortStepbutton(),80,150);
-        addObject(new MergeSortResetbutton(),80,250);
-         addObject(new Home(),100,350);
-        addObject(new Ipointer(),270,115);
-        addObject(new Jpointer(),570,115);
-        addObject(new Obj(2),270,156);
-        addObject(new Obj(7),320,156);
-        addObject(new Obj(26),370,156);
-        addObject(new Obj(49),420,156);
-        addObject(new Obj(3),570,156);
-        addObject(new Obj(5),620,156);
-        addObject(new Obj(17),670,156);
-        addObject(new Obj(22),730,156);
+        addObject(new Label("MERGESORT-ALGORITHM \n \t\t\t MERGE PHASE",40,700,500),450,120);
+        addObject(new Emptyarray(),350,250);
+        addObject(new Emptyarray(),650,250);
+        addObject(new Emptyarray2(),500,450);
+        addObject(new MergeSortStepbutton(),80,250);
+        addObject(new Resetbutton(),80,350);
+         addObject(new Home(),100,450);
+        addObject(new Ipointer(),270,215);
+        addObject(new Jpointer(),570,215);
+        addObject(new Obj(2),270,250);
+        addObject(new Obj(7),320,250);
+        addObject(new Obj(26),370,250);
+        addObject(new Obj(49),420,250);
+        addObject(new Obj(3),570,250);
+        addObject(new Obj(5),620,250);
+        addObject(new Obj(17),670,250);
+        addObject(new Obj(22),730,250);
     }
-    
+     public void reset()
+     {
+        Greenfoot.setWorld(new MergesortWorld());
+    }
 }

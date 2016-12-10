@@ -13,7 +13,7 @@ public class BubbleSortStepbutton extends Button
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
  int y3=156;
-     int[] values={46,35,67,24};
+     int[] values={46,92,65,24};
    int i=0;
    int j=1;
    
@@ -49,7 +49,7 @@ public class BubbleSortStepbutton extends Button
                 setI(i);
                 setJ(j);
                 setValues(values);
-                getWorld().addObject(new Label("values: I="+i+" J="+j,20),650,y2-25);
+                getWorld().addObject(new Label("values: Pass="+i+" J="+j,20),650,y2-25);
                 return;
             }
     
@@ -60,7 +60,7 @@ public class BubbleSortStepbutton extends Button
       getWorld().addObject(new Label(s,25),370,y2);
       setI(i);
       setJ(j);
-       getWorld().addObject(new Label("values: I="+i+" J="+j,20),650,y2-25);
+       getWorld().addObject(new Label("values: Pass="+i+" J="+j,20),650,y2-25);
       return;  
      }
   setValues(values);

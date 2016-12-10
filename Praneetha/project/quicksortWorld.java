@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class QuicksortWorld extends World
+public class QuicksortWorld extends World implements WorldResetStrategy
 {
 
     /**
@@ -23,7 +23,7 @@ public class QuicksortWorld extends World
     {    addObject(new Label("QUICK SORT-ALGORITHM",40,700,500),450,120);
         addObject(new Emptyarray2(),454,156);
         addObject(new QuickSortStepbutton(),80,150);
-        addObject(new QuickSortResetbutton(),80,250);
+        addObject(new Resetbutton(),80,250);
         addObject(new Home(),100,350);
         addObject(new Pivot(),270,100);
         addObject(new Ipointer(),260,115);
@@ -37,5 +37,8 @@ public class QuicksortWorld extends World
         addObject(new Obj(33),570,156);
         addObject(new Obj(9),620,156);
     }
-    
+     public void reset()
+     {
+        Greenfoot.setWorld(new QuicksortWorld());
+    }
 }

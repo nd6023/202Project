@@ -26,7 +26,7 @@ public class MergeSortStepbutton extends Button
         if(Greenfoot.mousePressed(this)&&done)
         {
            String s=" Sorting is done ";
-           getWorld().addObject(new Label(s),450,400);
+           getWorld().addObject(new Label(s),450,550);
         }
     }
     public boolean mergesort()
@@ -63,7 +63,7 @@ public class MergeSortStepbutton extends Button
         
        public void changePosition(Obj ob)
        {   
-           ob.setLocation(xval,300);
+           ob.setLocation(xval,450);
            xval=xval+50;
         }   
     }

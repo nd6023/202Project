@@ -14,6 +14,7 @@ public class SelectionSortStepButton extends Button
         if(Greenfoot.mouseClicked(this)&&!done)
        {  List<Label> l= getWorld().getObjects(Label.class);
            getWorld().removeObjects(l);
+           getWorld().addObject(new Label("SELECTION SORT-ALGORITHM",40,700,500),450,120);
            done=SelectionSort(getValues(),getI(),getJ());
         }
         if(Greenfoot.mouseClicked(this)&&done)
@@ -40,7 +41,7 @@ public class SelectionSortStepButton extends Button
         }
        }
         if (j==4&&i<3)
-        {   getWorld().addObject(new Label("min:"+min),450,250); 
+        {   
             exchangeNumbers(min,i);
             swap (min,i);
             setI(i);setJ(j);
